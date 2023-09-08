@@ -6,7 +6,7 @@ import { nanoid } from 'nanoid';
 export const UserForm = ({ createUser }) => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
-
+  
   const getInput = ({ target: { name, value } }) => {
     if (name === 'name') {
       setName(value);
@@ -14,7 +14,7 @@ export const UserForm = ({ createUser }) => {
       setNumber(value);
     }
   };
-
+  
   const setContact = e => {
     e.preventDefault();
 
@@ -23,13 +23,13 @@ export const UserForm = ({ createUser }) => {
       number,
       id: nanoid(),
     });
-
+    
     if (isCreated) {
       setName('');
       setNumber('');
     }
   };
-
+  
   return (
     <form className={css.addUserForm} onSubmit={setContact}>
       <div className={css.userFormWrapper}>
